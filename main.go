@@ -39,7 +39,7 @@ func main() {
 			return nil, &sftp_server.InvalidCredentialsError{}
 		}
 
-		server.Settings.BasePath = "/app_data" + dir
+		server.Settings.BasePath = "/app_data/" + dir
 
 		return &sftp_server.AuthenticationResponse{
 			Server: "sftp",

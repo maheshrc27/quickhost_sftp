@@ -17,6 +17,8 @@ import (
 	"golang.org/x/crypto/ssh"
 )
 
+const SSH_KEY_PATH = "/root/.ssh/id_rsa"
+
 type Settings struct {
 	BasePath    string
 	ReadOnly    bool
@@ -78,8 +80,6 @@ func (c *Server) Initialize() error {
 				ClientVersion: conn.ClientVersion(),
 			})
 
-			c.Settings.BasePath = "/app_data/88sazhw0dlzalex"
-
 			if err != nil {
 				return nil, err
 			}
@@ -96,7 +96,7 @@ func (c *Server) Initialize() error {
 		},
 	}
 
-	privateBytes, err := os.ReadFile("/home/mahesh/.ssh/id_ed25519")
+	privateBytes, err := os.ReadFile(SSH_KEY_PATH)
 	if err != nil {
 		return err
 	}
