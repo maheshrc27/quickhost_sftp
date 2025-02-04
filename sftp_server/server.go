@@ -17,7 +17,7 @@ import (
 	"golang.org/x/crypto/ssh"
 )
 
-const SSH_KEY_PATH = "/root/.ssh/id_rsa"
+const SSH_KEY_PATH = "/root/.ssh/id_ed25519"
 
 type Settings struct {
 	BasePath    string
